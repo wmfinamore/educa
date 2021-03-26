@@ -140,6 +140,7 @@ class ContentCreateUpdateView(TemplateResponseMixin, View):
 
 
 class ContentDeleteView(View):
+
     def post(self, request, id):
         content = get_object_or_404(Content,
                                     id=id,
@@ -150,3 +151,12 @@ class ContentDeleteView(View):
         return redirect('module_content_list',
                         module.id)
 
+
+class ModuleContentListView(TemplateResponseMixin, View):
+    template_name = 'courses/manage/module/content_list.html'
+
+    def get(self, request, module_id):
+        module = get_object_or_404(Module,
+                                   id=module_id,
+                                   course__owner=request.user)
+        return self.render_to_response({'module': module})
