@@ -10,6 +10,7 @@ django = "==3.*"
 pillow = "*"
 python-decouple = "*"
 psycopg2-binary = "*"
+django-braces = "*"
 
 [requires]
 python_version = "3.9"
