@@ -9,7 +9,7 @@
         <div class="contents">
             <h3>Modules</h3>
             <ul id="modules">
-                {% for m in courses.modules.all %}
+                {% for m in course.modules.all %}
                     <li data-id="{{ m.id }}" {% if m == module %}
                             class = "selected" {% endif %}>
                         <a href="{% url 'module_content_list' m.id %}">
