@@ -127,6 +127,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# MEDIA CONFIG
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
 # E-MAIL CONFIGURATION
 EMAIL_HOST = config('EMAIL_HOST')
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
@@ -134,4 +138,5 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = config('EMAIL_PORT')
 EMAIL_USE_TLS = config('EMAIL_USE_TLS')
 
+# LOGIN CONFIG
 LOGIN_REDIRECT_URL = reverse_lazy('student_course_list')
