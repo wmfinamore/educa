@@ -13,6 +13,7 @@ class SubjectAdmin(admin.ModelAdmin):
 class ModuleInLine(admin.StackedInline):
     model = Module
 
+
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
     fields = (('owner', 'subject'), ('title', 'slug'), 'overview')
@@ -21,3 +22,7 @@ class CourseAdmin(admin.ModelAdmin):
     search_fields = ['title', 'overview']
     prepopulated_fields = {'slug': ('title',)}
     inlines = [ModuleInLine]
+
+
+# use memcache admin index site
+admin.site.index_template = 'memcache_status/admin_index.html'

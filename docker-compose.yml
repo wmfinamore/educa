@@ -8,6 +8,14 @@ services:
       - "DJANGO_SETTINGS_MODULE=educa.settings"
     volumes:
       - postgres_data:/var/lib/postgresql/data/
+  memcached:
+    image: 'bitnami/memcached:latest'
+    environment:
+      #- MEMCACHED_CACHE_SIZE=128
+      #- MEMCACHED_MAX_CONNECTIONS=2000
+      #- MEMCACHED_THREADS=4
+      - MEMCACHED_USERNAME=admin
+      - MEMCACHED_PASSWORD=A12345678a
   web:
     build: .
     command: python /code/manage.py runserver 0.0.0.0:8000
@@ -17,6 +25,7 @@ services:
       - 8000:8000
     depends_on:
       - db
+      - memcached
 
 volumes:
   postgres_data:
