@@ -10,6 +10,8 @@ services:
       - postgres_data:/var/lib/postgresql/data/
   memcached:
     image: 'bitnami/memcached:latest'
+    ports:
+    - 11211:11211
     environment:
       #- MEMCACHED_CACHE_SIZE=128
       #- MEMCACHED_MAX_CONNECTIONS=2000
