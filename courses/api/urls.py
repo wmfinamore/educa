@@ -8,6 +8,6 @@ urlpatterns = [
          views.SubjectListView.as_view(), name='subject_list'),
     path('subjects/<pk>/',
          views.SubjectDetailView.as_view(), name='subjects_detail'),
-    path('courses/<pk>/enroll',
+    path('courses/<pk>/enroll/',
          views.CourseEnrollView.as_view(), name='course_enroll'),
 ]
