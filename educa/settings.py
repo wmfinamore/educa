@@ -162,3 +162,6 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
     ]
 }
+
+# CHANNELS CONFIG
+ASGI_APPLICATION = 'educa.routing.application'
