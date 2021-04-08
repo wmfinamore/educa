@@ -18,6 +18,8 @@ services:
       #- MEMCACHED_THREADS=4
       - MEMCACHED_USERNAME=admin
       - MEMCACHED_PASSWORD=A12345678a
+  redis:
+    image: "redis:alpine"
   web:
     build: .
     command: python /code/manage.py runserver 0.0.0.0:8000
@@ -28,6 +30,7 @@ services:
     depends_on:
       - db
       - memcached
+      - redis
 
 volumes:
   postgres_data:
