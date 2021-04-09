@@ -16,7 +16,11 @@ class ChatConsumer(WebsocketConsumer):
         self.accept()
 
     def disconnect(self, close_code):
-        pass
+        # leave room group
+        async_to_sync(self.channel_layer.group_discar)(
+            self.room_group_name,
+            self.channel_name
+        )
 
     # receive message from WebSocket
     def receive(self, text_data):
