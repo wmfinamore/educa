@@ -13,6 +13,7 @@ WORKDIR /code
 
 
 # Install dependencies
+RUN apt-get install build-essential
 RUN pip install pipenv
 COPY Pipfile Pipfile.lock /code/
 RUN pipenv install --system
