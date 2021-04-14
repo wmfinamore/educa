@@ -1,15 +1,10 @@
 from .base import *
 from decouple import config
-
-
 DEBUG = False
-
 ADMINS = (
     ('Willian Moreira Finamore', 'finamore.wm@gmail.com'),
 )
-
-ALLOWED_HOSTS = ['*']
-
+ALLOWED_HOSTS = ['educa.local']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',

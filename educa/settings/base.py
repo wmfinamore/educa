@@ -24,9 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(os.path.join(__file__
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -81,15 +79,15 @@ WSGI_APPLICATION = 'educa.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DBNAME'),
-        'USER': config('DBUSER'),
-        'HOST': config('DBHOST'),
-        'PORT': config('DBPORT'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': config('DBNAME'),
+#         'USER': config('DBUSER'),
+#         'HOST': config('DBHOST'),
+#         'PORT': config('DBPORT'),
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
